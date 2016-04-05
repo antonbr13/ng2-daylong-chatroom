@@ -1,0 +1,12 @@
+body {
+   text-align: center;
+}
+
+
+.boxes {
+   width: 60%;
+   background: aqua;
+   margin: 15px auto;
+   border-radius: 7px;
+   padding: 10px 10px;
+}

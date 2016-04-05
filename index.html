@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+      <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
+   </head>
+   <body ng-controller='mainCtrl'>
+
+<h1>Quote Maker</h1>
+
+   <form>
+       <input placeholder="Quote" type="text" ng-model="author.text"/>
+       <input placeholder="Author" type="text" ng-model="author.author"/>
+
+       <input type="submit" ng-click="addQuote(author)" value="Add a Quote" /><br><br>
+
+       <input placeholder="Delete Quote" type="text" ng-model='remove'>
+       <input type="submit" ng-click="removeQuote(remove)" value="Delete a Quote">
+       <br><br>
+
+       Search: <input type="text" name="name" placeholder="Authors" ng-model="searchAuthor.author">
+
+   </form>
+
+      <div class="boxes" ng-repeat="author in authors |filter: searchAuthor">
+
+
+            {{author.text}}
+         <br><br>
+         <strong>
+            - {{author.author}}
+         </strong>
+
+
+      </div>
+
+
+
+
+
+
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/mainCtrl.js"></script>
+		<script src="js/dataService.js"></script>
+   </body>
+</html>
